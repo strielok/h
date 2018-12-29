@@ -121,6 +121,7 @@ init 5 python:
         )
     )
 
+
 label dev_force_affection_normal:
     m 1a "..."
     $ persistent._mas_affection["affection"] = 0
