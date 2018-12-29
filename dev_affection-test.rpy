@@ -66,7 +66,7 @@ init 5 python:
     
 label dev_force_affection_heartbroken:
     m 1h "..."
-    $ persistent._mas_affection["affection"] = -100
+    $ persistent._mas_affection["affection"] = -117
     $ mas_updateAffectionExp()
     m 1q "You're so cruel [player]..."
     return
@@ -85,7 +85,7 @@ init 5 python:
 
 label dev_force_affection_distressed:
     m 1h "..."
-    $ persistent._mas_affection["affection"] = -60
+    $ persistent._mas_affection["affection"] = -76
     $ mas_updateAffectionExp()
     m 1p "Is this really what you're like...?"
     return
@@ -162,7 +162,7 @@ init 5 python:
     
 label dev_force_affection_enamored:
     m 1e "..."
-    $ persistent._mas_affection["affection"] = 60
+    $ persistent._mas_affection["affection"] = 400
     $ mas_updateAffectionExp()
     m 1b "I love you [player]!"
     return
@@ -181,7 +181,26 @@ init 5 python:
     
 label dev_force_affection_lovestruck:
     m 1j "..."
-    $ persistent._mas_affection["affection"] = 100
+    $ persistent._mas_affection["affection"] = 1000
     $ mas_updateAffectionExp()
     m 1k "My one and only love is you [player]!"
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="dev_force_affection_affectionate",
+            category=["dev"],
+            prompt="MAKE AFFECTIONATE",
+            pool=True,
+            unlocked=True
+        )
+    )
+    
+    label dev_force_affection_affectionate:
+    m 1e "..."
+    $ persistent._mas_affection["affection"] = 150
+    $ mas_updateAffectionExp()
+    m 1b "Thanks, [player]!"
     return
