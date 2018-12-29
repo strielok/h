@@ -51,14 +51,37 @@ label dev_monika_affection_check:
     return
 
 
-# Should these be added to the dev category? I don't want to make cheating easy
 
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="dev_force_affection_heartbroken",
+            category=["dev"],
+            prompt="FORCE HEARTBREAK",
+            pool=True,
+            unlocked=True
+        )
+    )
+    
 label dev_force_affection_heartbroken:
     m 1h "..."
     $ persistent._mas_affection["affection"] = -100
     $ mas_updateAffectionExp()
     m 1q "You're so cruel [player]..."
     return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="dev_force_affection_distressed",
+            category=["dev"],
+            prompt="FORCE DISTRESSED",
+            pool=True,
+            unlocked=True
+        )
+    )
 
 label dev_force_affection_distressed:
     m 1h "..."
@@ -66,6 +89,18 @@ label dev_force_affection_distressed:
     $ mas_updateAffectionExp()
     m 1p "Is this really what you're like...?"
     return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="dev_force_affection_upset",
+            category=["dev"],
+            prompt="FORCE UPSET",
+            pool=True,
+            unlocked=True
+        )
+    )
 
 label dev_force_affection_upset:
     m 1h "..."
@@ -73,6 +108,18 @@ label dev_force_affection_upset:
     $ mas_updateAffectionExp()
     m 1f "[player]...please don't be like this."
     return
+    
+    init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="dev_force_affection_normal",
+            category=["dev"],
+            prompt="FORCE NORMAL",
+            pool=True,
+            unlocked=True
+        )
+    )
 
 label dev_force_affection_normal:
     m 1a "..."
@@ -80,21 +127,57 @@ label dev_force_affection_normal:
     $ mas_updateAffectionExp()
     m "Everything's okay [player]."
     return
-
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="dev_force_affection_happy",
+            category=["dev"],
+            prompt="FORCE HAPPY",
+            pool=True,
+            unlocked=True
+        )
+    )
+    
 label dev_force_affection_happy:
     m 1a "..."
     $ persistent._mas_affection["affection"] = 30
     $ mas_updateAffectionExp()
     m 1k "Ehehe~ Lucky me."
     return
-
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="dev_force_affection_enamored",
+            category=["dev"],
+            prompt="FORCE ENAMORED",
+            pool=True,
+            unlocked=True
+        )
+    )
+    
 label dev_force_affection_enamored:
     m 1e "..."
     $ persistent._mas_affection["affection"] = 60
     $ mas_updateAffectionExp()
     m 1b "I love you [player]!"
     return
-
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="dev_force_affection_lovestruck",
+            category=["dev"],
+            prompt="MAKE LOVE",
+            pool=True,
+            unlocked=True
+        )
+    )
+    
 label dev_force_affection_lovestruck:
     m 1j "..."
     $ persistent._mas_affection["affection"] = 100
