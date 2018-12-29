@@ -198,7 +198,7 @@ init 5 python:
         )
     )
     
-    label dev_force_affection_affectionate:
+label dev_force_affection_affectionate:
     m 1e "..."
     $ persistent._mas_affection["affection"] = 150
     $ mas_updateAffectionExp()
