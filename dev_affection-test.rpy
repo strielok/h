@@ -109,7 +109,7 @@ label dev_force_affection_upset:
     m 1f "[player]...please don't be like this."
     return
     
-    init 5 python:
+init 5 python:
     addEvent(
         Event(
             persistent.event_database,
