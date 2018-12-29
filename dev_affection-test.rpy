@@ -58,7 +58,7 @@ init 5 python:
             persistent.event_database,
             eventlabel="dev_force_affection_heartbroken",
             category=["dev"],
-            prompt="FORCE HEARTBREAK",
+            prompt="FORCE FUNNEL",
             pool=True,
             unlocked=True
         )
